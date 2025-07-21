@@ -36,12 +36,6 @@ pipeline {
                 '''
             }
         }
-
-        stage('Approve') {
-            steps {
-                input 'Proceed to Deploy?'
-            }
-        }
     }
 
     post {
