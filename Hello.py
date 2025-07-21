@@ -1,2 +1,6 @@
-print("Hello, World!")
-print("Testing if I add a new thing!")
+
+def greet():
+    print("Hello, World!")
+
+if __name__ == "__main__":
+    print(greet())
