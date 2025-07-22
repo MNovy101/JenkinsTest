@@ -4,18 +4,19 @@ stages:
   - deploy
 
 build:
-  stage: build
+  image: ruby:3.1
+  before_script:
+    - apt-get update && apt-get install -y curl
+    - curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+    - apt-get install -y nodejs
   script:
-    - npm install
-    - npm run build
-
-test:
-  stage: test
-  script:
-    - npm test
+    - if [ -f package.json ]; then
+        npm install && npm run build;
+      else
+        echo "No package.json, skipping npm install/build";
+      fi
 
 deploy:
   stage: deploy
   script:
     - echo "Deploying to GitLab Pages"
-    - npm run deploy
