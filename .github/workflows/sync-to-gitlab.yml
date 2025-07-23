@@ -2,7 +2,7 @@ name: Sync to GitLab
 
 on:
   push:
-    branches: [ main ]
+    branches: [ GitLabForce ]
 
 jobs:
   sync:
@@ -18,3 +18,4 @@ jobs:
           gitlab_url: ${{ secrets.GITLAB_URL }}
           username:   ${{ secrets.GITLAB_USERNAME }}
           gitlab_pat: ${{ secrets.GITLAB_PAT }}
+          force_push: true
