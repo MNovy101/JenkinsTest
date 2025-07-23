@@ -1,11 +1,12 @@
 {
     "name": "hello-app",
-    "version": "1.0.0",
-    "main": "app.js",
+    "version": "1.0.1",
+    "main": "server.js",
+    "description": "Basic Node.js UI with Express, HTML, CSS, and JS",
     "scripts": {
-        "start": "node app.js"
+        "start": "node server.js"
     },
     "dependencies": {
-        "express": "4.17.1"
+        "express": "^4.18.1"
     }
 }
